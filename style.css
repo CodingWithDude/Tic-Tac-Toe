@@ -1,0 +1,229 @@
+:root {
+  /* Fonts */
+  --ff-primary: "Poppins", sans-serif;
+  --fw-regular: 400;
+  --fw-medium: 500;
+
+  /* Colors */
+  --color-bg-primary: #ecfdf5;
+  --color-font-primary: #064e3b;
+  --color-error-msg: #dc2626;
+  --color-btn-bg: #064e3b;
+  --color-btn-font: white;
+  --color-btn-bg-hover: #ecfdf5;
+  --color-btn-font-hover: #064e3b;
+  --color-grid: #064e3b;
+  --color-board-position: #d1fae5;
+  --color-board-position-hover: #34d399;
+}
+/* CSS RESET */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-family: var(--ff-primary);
+  font-size: 16px;
+
+  /* footer support */
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  width: 100vw;
+  background-color: var(--color-bg-primary);
+  color: var(--color-font-primary);
+
+  /* footer support */
+  margin-bottom: 2rem;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.header {
+  font-size: 5rem;
+  font-weight: var(--fw-medium);
+  margin: 1rem;
+}
+
+.board-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-weight: var(--fw-regular);
+}
+
+.game-result {
+  font-size: 2.5rem;
+}
+.errorMsg {
+  font-size: 2rem;
+  color: var(--color-error-msg);
+}
+
+.current-player {
+  font-size: 2rem;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.board-position {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-board-position);
+  height: 150px;
+  width: 150px;
+}
+
+.reset {
+  font-size: 2.5rem;
+  font-weight: var(--fw-medium);
+  padding: 1rem 2rem;
+  background-color: var(--color-btn-bg);
+  color: var(--color-btn-font);
+  border-radius: 50px;
+  border: 3px solid var(--color-btn-bg);
+}
+
+.reset:hover {
+  background-color: var(--color-btn-bg-hover);
+  color: var(--color-btn-font-hover);
+}
+
+/* Grid Styling */
+
+#position-1 {
+  border-left: 3px solid var(--color-grid);
+  border-top: 3px solid var(--color-grid);
+  border-top-left-radius: 20px;
+}
+
+#position-2 {
+  border-top: 3px solid var(--color-grid);
+  border-left: 3px solid var(--color-grid);
+  border-right: 3px solid var(--color-grid);
+}
+
+#position-3 {
+  border-right: 3px solid var(--color-grid);
+  border-top: 3px solid var(--color-grid);
+  border-top-right-radius: 20px;
+}
+
+#position-4 {
+  border-top: 3px solid var(--color-grid);
+  border-left: 3px solid var(--color-grid);
+  border-bottom: 3px solid var(--color-grid);
+}
+
+#position-5 {
+  border: 3px solid var(--color-grid);
+}
+
+#position-6 {
+  border-top: 3px solid var(--color-grid);
+  border-right: 3px solid var(--color-grid);
+  border-bottom: 3px solid var(--color-grid);
+}
+
+#position-7 {
+  border-left: 3px solid var(--color-grid);
+  border-bottom: 3px solid var(--color-grid);
+  border-bottom-left-radius: 20px;
+}
+
+#position-8 {
+  border-left: 3px solid var(--color-grid);
+  border-right: 3px solid var(--color-grid);
+  border-bottom: 3px solid var(--color-grid);
+}
+
+#position-9 {
+  border-right: 3px solid var(--color-grid);
+  border-bottom: 3px solid var(--color-grid);
+  border-bottom-right-radius: 20px;
+}
+
+.board-position:hover {
+  background-color: var(--color-board-position-hover);
+}
+
+/* FOOTER */
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+}
+
+.fa-github {
+  color: var(--color-btn-bg);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.fa-github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+@media (max-width: 500px) {
+  html {
+    font-size: 10px;
+  }
+
+  .board-position {
+    height: 100px;
+    width: 100px;
+  }
+
+  img {
+    height: 75px;
+    width: 75px;
+  }
+}
+
+@media (max-width: 315px) {
+  html {
+    font-size: 10px;
+  }
+
+  .board-position {
+    height: 75px;
+    width: 75px;
+  }
+
+  .footer {
+    font-size: 1.4rem;
+  }
+
+  img {
+    height: 50px;
+    width: 50px;
+  }
+}

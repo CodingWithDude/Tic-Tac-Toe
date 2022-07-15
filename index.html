@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic-Tac-Toe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/aa27ee4dff.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- Header -->
+      <header class="header">Tic-Tac-Toe</header>
+      <!-- Gameboard Container -->
+      <div class="board-container">
+        <div id="errorMsg" class="errorMsg"></div>
+        <div id="current-player" class="current-player"></div>
+        <!-- Game Board -->
+        <div id="board" class="board">
+          <div id="position-1" class="board-position"></div>
+          <div id="position-2" class="board-position"></div>
+          <div id="position-3" class="board-position"></div>
+          <div id="position-4" class="board-position"></div>
+          <div id="position-5" class="board-position"></div>
+          <div id="position-6" class="board-position"></div>
+          <div id="position-7" class="board-position"></div>
+          <div id="position-8" class="board-position"></div>
+          <div id="position-9" class="board-position"></div>
+        </div>
+        <!-- Reset / New Game Button -->
+        <button id="reset" class="reset">Reset</button>
+        <div id="game-result" class="game-result"></div>
+      </div>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        Copyright ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        CodingWithDude
+      </p>
+      <a href="https://github.com/codingwithdude" target="_blank">
+        <i class="fab fa-github"></i
+      ></a>
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>
