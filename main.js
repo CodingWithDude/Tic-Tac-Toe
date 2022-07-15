@@ -30,6 +30,9 @@ const board = [
 // Game State disables moves after win
 let gameState = true;
 
+// Tracking for full board tie
+let moveCount = 0;
+
 // Reset Button
 const resetBtn = document.getElementById("reset");
 resetBtn.onclick = reset;
@@ -68,6 +71,7 @@ function reset() {
   gameResult.textContent = "";
   errorMsg.textContent = "";
   gameState = true;
+  moveCount = 0;
 }
 
 // Check for a winner or a tie
@@ -145,7 +149,7 @@ function checkWinner(currentPlayer) {
     }
   });
 
-  // Check diagonals
+  // Check Diagonals
   diagonals.forEach((diagonal) => {
     if (
       diagonal[0] === currentPlayer.symbol &&
@@ -156,6 +160,12 @@ function checkWinner(currentPlayer) {
       gameState = false;
     }
   });
+
+  // Check Tie
+  if (moveCount === 9) {
+    gameResult.textContent = "The Game is a TIE!";
+    gameState = false;
+  }
 }
 
 // Game Board Event Listener
@@ -187,6 +197,7 @@ board.forEach((position) => {
         position.appendChild(iconO);
         position.dataset.symbol = "O";
       }
+      moveCount++;
       checkWinner(currentPlayer);
       switchPlayer();
     } else {
